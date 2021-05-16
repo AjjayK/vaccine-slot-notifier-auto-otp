@@ -11,7 +11,7 @@
  1. Create a discord bot. If you don't know this [YouTube video](https://www.youtube.com/watch?v=SPTfmiYiuok) will help you
  2. Download the repo and unzip
  3. Update environment variables in `.env`. Use [this file](/state_and_district_data.csv) to get `district id`
- 4. set up OTP retriver. Use the procedure mentioned in this Repo [Steps-to-retrieve-text-to-REST](https://github.com/bombardier-gif/covid-vaccine-booking#setup-guide-for-android)
+ 4. set up OTP retriver. Use the procedure mentioned in this Repo [Steps-to-retrieve-text-REST](https://github.com/bombardier-gif/covid-vaccine-booking#setup-guide-for-android)
  5. Run the Python program `bot_soul.py`
  6. Send `Start` in your discord channel to run the script
  7. When slot appears, bot will send you the details
