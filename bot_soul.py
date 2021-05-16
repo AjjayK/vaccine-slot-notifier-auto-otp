@@ -195,7 +195,7 @@ async def on_message(message):
   
   if message.content == "Help":
       author = message.author
-      await post_outputs(f"To know latest vaccine slot availability status, send \"Slots\" Private {author} /n To automatically validate OTP, enter \"OTP auto\" if manual, enter \"OTP manual\"")
+      await post_outputs(f"To know latest vaccine slot availability status, send \"Slots\" Private {author} \n To automatically validate OTP, enter \"OTP auto\" if manual, enter \"OTP manual\"")
       
   if message.content == "Start":
       if str(message.author) == "SaarapPaambu#0534":
