@@ -4,6 +4,7 @@
  Sincere thanks to [@pallupz](https://github.com/pallupz) for his code which enabled to retrieve live data from CoWIN API and [@bombardier-gif](https://github.com/bombardier-gif) for automatic OTP retrieving codes.
  
  Link to the repos 
+ 
  [covid-vaccine-booking-manual-otp](https://github.com/pallupz/covid-vaccine-booking)
  
  [covid-vaccine-booking-auto-otp](https://github.com/bombardier-gif/covid-vaccine-booking)
