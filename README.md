@@ -5,6 +5,7 @@
  
  Link to the repos 
  [covid-vaccine-booking-manual-otp](https://github.com/pallupz/covid-vaccine-booking)
+ 
  [covid-vaccine-booking-auto-otp](https://github.com/bombardier-gif/covid-vaccine-booking)
  
  ## Steps to get vaccine notification using discord bot
