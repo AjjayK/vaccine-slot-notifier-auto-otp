@@ -34,7 +34,7 @@ async def slot_finder():
             select_data = select_data[fields]
             data_json = select_data.to_json(orient = 'records')
             global last_status
-            last_status = "Deeply sorry. It's a No" if select_data.empty else "data_json"
+            last_status = "Deeply sorry. It's a No" if select_data.empty else data_json
             
             
             if select_data.empty:
