@@ -9,6 +9,7 @@ import nest_asyncio
 import time
 from dotenv import load_dotenv
 from os import getenv
+import asyncio
 
 client = discord.Client()
 load_dotenv()
@@ -49,7 +50,7 @@ async def slot_finder():
                 await post_outputs("Token expired. Regenerating OTP..")
                 await generate_token_OTP(mobile, base_request_header, auto)
             else:
-                time.sleep(15)
+                await asyncio.sleep(15)
                 await slot_finder()
                 
         else:
@@ -87,13 +88,13 @@ async def generate_token_OTP(mobile, base_request_header, auto):
         else:
             await post_outputs('Unable to Generate OTP.. Retrying')
             await post_outputs(txnId.status_code, txnId.text)
-            time.sleep(10)
+            await asyncio.sleep(10)
             await generate_token_OTP(mobile, base_request_header, auto)
             
     except Exception as e:
         await post_outputs(str(e)) 
         await post_outputs("Error generating OTP.. Retrying")
-        time.sleep(10)
+        await asyncio.sleep(10)
         await generate_token_OTP(mobile, base_request_header)
 
 
@@ -101,7 +102,7 @@ async def validate_OTP_auto():
     storage_url = "https://kvdb.io/ASth4wnvVDPkg2bdjsiqMN/" + str(mobile)
     print("clearing OTP bucket: " + storage_url)
     response_to_clear = requests.put(storage_url, data={})
-    time.sleep(10)
+    await asyncio.sleep(10)
     t_end = time.time() + 60 * 3
     while time.time() < t_end:
         response = requests.get(storage_url)
@@ -110,13 +111,13 @@ async def validate_OTP_auto():
             OTP = OTP.replace("Your OTP to register/access CoWIN is ", "")
             OTP = OTP.replace(". It will be valid for 3 minutes. - CoWIN", "")
             if not OTP:
-                time.sleep(5)
+                await asyncio.sleep(5)
                 continue
             break
         else:
             # Hope it won't 500 a little later
             await post_outputs("error fetching OTP API:" + response.text)
-            time.sleep(30)
+            await asyncio.sleep(30)
     
     if OTP:
         data = {"otp": sha256(str(OTP).encode('utf-8')).hexdigest(), "txnId": txnId}
