@@ -1,5 +1,5 @@
 # vaccine-slot-notifier-auto-otp
- A Discord bot that notifies live Covid vaccine slot availablilty for 18-44 age group. Retrives OTP automatically from mobile using REST services.
+ A Discord bot that notifies live Covid vaccine slot availabililty for 18-44 age group. Retrieves OTP automatically from mobile using REST services.
  
  Sincere thanks to [@pallupz](https://github.com/pallupz) for his code which enabled to retrieve live data from CoWIN API and [@bombardier-gif](https://github.com/bombardier-gif) for automatic OTP retrieving codes.
  
